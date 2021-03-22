@@ -1,0 +1,16 @@
+.button {
+  transition-duration: 0.4s;
+  background-color: transparent;
+  outline: none;
+  float: right;
+  margin-left: 15px
+}
+
+span{
+  font-size: 1.2em;
+}
+
+.button:hover {
+  background-color: #4CAF50; /* Green */
+  color: white;
+}

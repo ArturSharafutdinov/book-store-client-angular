@@ -2,4 +2,8 @@
   <span>{{cartItem.name}}</span> x
   <span>{{cartItem.qty}}</span>:
   <span>{{ cartItem.qty * cartItem.price}}</span>
+
+</div>
+<div>
+  <button (click)="removeItem(cartItem)">Удалить книгу</button>
 </div>
