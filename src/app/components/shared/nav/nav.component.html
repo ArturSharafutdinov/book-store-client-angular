@@ -4,6 +4,6 @@
     <a class="p-2 text-dark" [routerLink]="['/shop']">Shop</a>
     <a class="p-2 text-dark" [routerLink]="['/shop']"></a>
   </nav>
-  <a class="btn btn-outline-primary" [routerLink]="['/register']">Sign up</a>
-  <a class="btn btn-outline-secondary" [routerLink]="['/login']">Login</a>
+  <a *ngIf="!isUser" class="btn btn-outline-primary" [routerLink]="['/register']">Sign up</a>
+  <a *ngIf="!isUser" class="btn btn-outline-secondary" [routerLink]="['/login']">Login</a>
 </header>
