@@ -2,8 +2,9 @@
   <p class="h5 my-0 me-md-auto fw-normal"><app-header></app-header></p>
   <nav class="my-2 my-md-0 me-md-3">
     <a class="p-2 text-dark" [routerLink]="['/shop']">Shop</a>
-    <a class="p-2 text-dark" [routerLink]="['/shop']"></a>
+    <a class="p-2 text-dark" ></a>
   </nav>
   <a *ngIf="!isUser" class="btn btn-outline-primary" [routerLink]="['/register']">Sign up</a>
   <a *ngIf="!isUser" class="btn btn-outline-secondary" [routerLink]="['/login']">Login</a>
+  <button *ngIf="isUser" class="btn btn-outline-primary" (click)="logout()">Выход</button>
 </header>

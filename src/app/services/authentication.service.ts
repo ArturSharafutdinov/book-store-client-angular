@@ -5,6 +5,7 @@ import { map } from 'rxjs/operators';
 import {User} from '../models/user';
 import {apiUrl} from '../../environments/environment';
 import {JwtResponse} from '../helpers/JwtResponse';
+import {UserSignup} from '../models/user-signup';
 
 
 @Injectable({ providedIn: 'root' })
@@ -35,5 +36,11 @@ export class AuthenticationService {
     // remove user from local storage to log user out
     localStorage.removeItem('currentUser');
     this.currentUserSubject.next(null);
+  }
+
+  signUp(user){
+    console.log(user);
+    return this.http.post(`${apiUrl}/auth/signup`, user);
+
   }
 }
