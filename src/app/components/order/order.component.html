@@ -1,0 +1,28 @@
+<div class="row">
+
+  <div class="col-md-8">
+    <form [formGroup]="orderForm" (ngSubmit)="onSubmit()">
+      <div class="form-group">
+        <label for="delivery_type">Delivery type</label>
+        <input type="text" formControlName="delivery_type" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.delivery_type.errors }" />
+        <div *ngIf="submitted && f.delivery_type.errors" class="invalid-feedback">
+          <div *ngIf="f.delivery_type.errors.required">Delivery type is required</div>
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="bonus">Bonus</label>
+        <input type="checkbox" formControlName="bonus" />
+        </div>
+      <br>
+      <div class="form-group">
+        <button [disabled]="loading" class="btn btn-primary">
+          <span *ngIf="loading" class="spinner-border spinner-border-sm mr-1"></span>
+          Order
+        </button>
+      </div>
+    </form>
+  </div>
+  <div class="col-md-4">
+    <app-cart></app-cart>
+  </div>
+</div>

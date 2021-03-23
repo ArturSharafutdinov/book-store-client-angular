@@ -17,6 +17,12 @@ import { RegisterComponent } from './components/register/register.component';
 import {AppRoutingModule} from './app-routing.module';
 import { PageNotFoundComponent } from './components/shared/page-not-found/page-not-found.component';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+import { OrderComponent } from './components/order/order.component';
+import {JwtInterceptor} from './helpers/jwt.inceptor';
+import { ProfileComponent } from './components/profile/profile.component';
+import { ProfileItemComponent } from './components/profile/profile-item/profile-item.component';
+import { ProductComponent } from './components/product/product.component';
+import { CreateProductComponent } from './components/create-product/create-product.component';
 
 @NgModule({
   declarations: [
@@ -33,6 +39,11 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms';
     LoginComponent,
     RegisterComponent,
     PageNotFoundComponent,
+    OrderComponent,
+    ProfileComponent,
+    ProfileItemComponent,
+    ProductComponent,
+    CreateProductComponent,
   ],
   imports: [
     BrowserModule,

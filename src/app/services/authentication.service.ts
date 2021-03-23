@@ -10,15 +10,15 @@ import {UserSignup} from '../models/user-signup';
 
 @Injectable({ providedIn: 'root' })
 export class AuthenticationService {
-  private currentUserSubject: BehaviorSubject<User>;
-  public currentUser: Observable<User>;
+  private currentUserSubject: BehaviorSubject<JwtResponse>;
+  public currentUser: Observable<JwtResponse>;
 
   constructor(private http: HttpClient) {
-    this.currentUserSubject = new BehaviorSubject<User>(JSON.parse(localStorage.getItem('currentUser')));
+    this.currentUserSubject = new BehaviorSubject<JwtResponse>(JSON.parse(localStorage.getItem('currentUser')));
     this.currentUser = this.currentUserSubject.asObservable();
   }
 
-  public get currentUserValue(): User {
+  public get currentUserValue(): JwtResponse {
     return this.currentUserSubject.value;
   }
 
@@ -27,7 +27,7 @@ export class AuthenticationService {
       .pipe(map(answer => {
         // store user details and jwt token in local storage to keep user logged in between page refreshes
         localStorage.setItem('currentUser', JSON.stringify(answer));
-        this.currentUserSubject.next(answer.user);
+        this.currentUserSubject.next(answer);
         return answer;
       }));
   }

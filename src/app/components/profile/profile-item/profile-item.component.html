@@ -1,0 +1,13 @@
+<div class="cart-item">
+  <p>Номер заказа: {{order.orderId}}</p>
+  <p>Способ доставки: {{order.delivery_type}}</p>
+  <ul class="list-group">
+    <li class="list-group-item" *ngFor="let item of order.orders">
+      <p>Номер книги : {{item.bookId}}</p>
+      <p>Название книги : {{item.bookName}}</p>
+      <p>Количество книг : {{item.kolvo}}</p>
+      <img class="bd-placeholder-img card-img-top p-2" width="20px" height="350px"
+           [src]="item.bookImage"/>
+    </li>
+  </ul>
+</div>

@@ -1,0 +1,9 @@
+<div *ngIf="orders.length === 0" class="alert alert-info">Нет заказов</div>
+
+  <div *ngFor="let item of orders">
+    <app-order-item [order]="item"></app-order-item>
+    <br>
+    <br>
+    <br>
+    <br>
+  </div>
